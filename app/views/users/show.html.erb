@@ -18,6 +18,7 @@
   <p>
     <%= post.created_at.to_formatted_s(:long) %>
   </p>
+  <%= link_to "Go To Post", post_path(post) %>
   </div>
   <% end %>
 </div>

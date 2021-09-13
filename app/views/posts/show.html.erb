@@ -7,7 +7,7 @@
 
 <p>
   <strong>User:</strong>
-  <%= @post.user.name %>
+  <%= link_to @post.user.name, user_path(@post.user) %>
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
