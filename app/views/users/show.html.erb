@@ -9,6 +9,17 @@
   <strong>Email:</strong>
   <%= @user.email %>
 </p>
-
+<div>
+  <% @user.posts.each do |post| %>
+  <div class="post">
+    <p>
+    <%= post.content %>
+  </p>
+  <p>
+    <%= post.created_at.to_formatted_s(:long) %>
+  </p>
+  </div>
+  <% end %>
+</div>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
