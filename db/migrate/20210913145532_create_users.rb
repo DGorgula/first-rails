@@ -6,5 +6,6 @@ class CreateUsers < ActiveRecord::Migration[6.1]
 
       t.timestamps
     end
+    #Ex:- add_index("admin_users", "username")
   end
 end
