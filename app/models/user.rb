@@ -11,8 +11,8 @@ class User < ApplicationRecord
             puts search.downcase
             
             search_name = search.downcase
-            if self.where("name LIKE ?",  "%#{search_name}%").length > 0
-                self.where("name LIKE ?",   "%#{search_name}%").sort_by{ |user| user.name}
+            if self.where("name ILIKE ?",  "%#{search_name}%").length > 0
+                self.where("name ILIKE ?",   "%#{search_name}%").sort_by{ |user| user.name}
             else
                 # here should say that the nothing was found on the search.
                 User.all.sort_by{ |user| user.name}
