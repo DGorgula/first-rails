@@ -1,6 +1,6 @@
 class User < ApplicationRecord
     has_many :posts
-    validates :name, presence: true
+    validates :name, presence: true, uniqueness: {case_sensitive: false}
     validates :email,
         format: { with: /\A(.+)@(.+)\z/, message: "Email invalid"  },
             uniqueness: { case_sensitive: false },
