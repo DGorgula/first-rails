@@ -11,6 +11,14 @@
   </head>
 
   <body>
+  <nav>
+  <%= link_to 'All Posts', posts_path %>
+  <%= link_to 'Users', users_path %>
+  
+  <%# <input placeholder="Search" onchange=<%puts "bla" %>
+  
+  <%# /> %>
+  </nav>
     <%= yield %>
   </body>
 </html>

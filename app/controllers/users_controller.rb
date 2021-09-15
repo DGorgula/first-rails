@@ -7,7 +7,8 @@ class UsersController < ApplicationController
 
 # GET /users or /users.json
   def index
-    @users = User.all
+    # @users = User.all
+    @users = User.search_by_name(params[:search_by_name])
   end
 
   # GET /users/1 or /users/1.json
@@ -68,6 +69,6 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:name, :email)
+      params.require(:user).permit(:name, :email, :search_by_name)
     end
 end
