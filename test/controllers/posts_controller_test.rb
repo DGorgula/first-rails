@@ -16,10 +16,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create post" do
-    # post users_url, params: { user: { email: "wholeDifferent@mail", name: "USERNAME" } }
-    Rails::logger.debug "lllllllllloooooooooooooooogggggggggggggsssssssssssss"
     assert_difference('Post.count') do
-      # post posts_url, params: { post: { content: "Testy Test", user_id: "1" } }
       post posts_url, params: { post: { content: @post.content, user_id: @post.user_id } }
     end
 
