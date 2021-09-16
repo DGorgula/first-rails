@@ -16,8 +16,11 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create user" do
+    # Rails::logger.debug "testy test!!!!!!!!!!!!!!!!!!!!!!!11"
+    # Rails::logger.debug @user.email
+  
     assert_difference('User.count') do
-      post users_url, params: { user: { email: @user.email, name: @user.name } }
+      post users_url, params: { user: { email: "wholeDifferent@mail", name: "USERNAME" } }
     end
 
     assert_redirected_to user_url(User.last)
